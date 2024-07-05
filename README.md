@@ -42,7 +42,8 @@ The results files(e.g. metrics, checkpoints) are under `results/`. Feel free to 
 
 ### Use your own dataset
 
-Follow `code/prepare_data.ipynb`, and put your WSI features and gene expression in `xxx/`
+Follow the format of `data/label_id.csv`,`sample_HIPT_features.pkl` and `sample_knowledge_exp`, and put your WSI features and gene expression in `data/`.
+In `label_id.csv`, only the HISTOLOGICAL_SUBTYPE, MFP, wsi_name and sample_id are necessary.
 
 ### Citation
 
