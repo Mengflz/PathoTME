@@ -1,0 +1,19 @@
+datasets:
+  label_df_path: 'data/label_id.csv'
+  gene_file_path: "data/sample_knowledge_exp.csv"
+  mode: "HIPT"
+  test_size: 0.15
+  val_size: 0  # Use cross-validation
+  seed: 3076
+
+models:
+  result_dir: 'results_test_trainSNN/'
+  seed: 3076
+  model_size_omic: 'big'
+  prompt_length: 4
+  cancer_type: 6
+  lr: 0.000005
+  weight_decay: 0.0001
+  patience: 10
+  stop_epoch: 20
+  trained_SNN: True
