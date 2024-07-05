@@ -6,7 +6,7 @@
 
 ## Workflow overview
 
- <img src="workflow.jpg" width="300px" align="right" />
+ <img src="workflow.jpg" width="300px" align="top" />
 
 PathoTME is composed of three branches, the gene guide branch (yellow), the domain adversarial branch (pink) and the main WSI learning branch (blue). In practical application, only the main WSI branch is active, with the other two branches existing as pre-trained weights. In gene guide branch, genes from a curated knowledge gene sets are collected from previous works. Then we use one layer FC with SNN to extract gene embeddings from tabular data.
 At the training stage, gene branch will guide WSI projector to learn discriminative WSI embeddings which close to the paired gene embeddings in the representation space. At the same time, domain adversarial branch will prevent WSI learning branch from attaining features related to tissue structures irrelevant to TME subtypes. At the inference stage, our network only needs WSI as input, and output the prediction result of TME subtypes.
