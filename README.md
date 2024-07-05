@@ -2,12 +2,12 @@
 
 ## Genomics-guided Representation Learning for Pathologic Pan-cancer Tumor Microenvironment Subtype Prediction (*MICCAI 2024*)
 
-[Paper Link](https://doi.org/10.48550/arXiv.2406.06517)
+[Arxiv](https://doi.org/10.48550/arXiv.2406.06517)
 
 ## Workflow overview
-
- <img src="workflow.jpg" width="600px"/>
-
+ <p align="center">
+  <img align="center" src="workflow.jpg" width="800px"/>
+ </p>
 PathoTME is composed of three branches, the gene guide branch (yellow), the domain adversarial branch (pink) and the main WSI learning branch (blue). In practical application, only the main WSI branch is active, with the other two branches existing as pre-trained weights. In gene guide branch, genes from a curated knowledge gene sets are collected from previous works. Then we use one layer FC with SNN to extract gene embeddings from tabular data.
 At the training stage, gene branch will guide WSI projector to learn discriminative WSI embeddings which close to the paired gene embeddings in the representation space. At the same time, domain adversarial branch will prevent WSI learning branch from attaining features related to tissue structures irrelevant to TME subtypes. At the inference stage, our network only needs WSI as input, and output the prediction result of TME subtypes.
 
@@ -24,11 +24,11 @@ pip install -e .
 
 ### Data preprocessing
 
-1.Download [TCGA](https://portal.gdc.cancer.gov/projects?filters=%7B%22op%22%3A%22and%22%2C%22content%22%3A%5B%7B%22op%22%3A%22in%22%2C%22content%22%3A%7B%22field%22%3A%22projects.program.name%22%2C%22value%22%3A%5B%22TCGA%22%5D%7D%7D%5D%7D) WSIs or prepare your own WSIs.
+1. Download [TCGA](https://portal.gdc.cancer.gov/projects?filters=%7B%22op%22%3A%22and%22%2C%22content%22%3A%5B%7B%22op%22%3A%22in%22%2C%22content%22%3A%7B%22field%22%3A%22projects.program.name%22%2C%22value%22%3A%5B%22TCGA%22%5D%7D%7D%5D%7D) WSIs or prepare your own WSIs.
 
-2.Please refer to [HIPT](https://github.com/mahmoodlab/HIPT) to extract features from WSIs. Store your features in pickle like `data/sample.pkl`. We use 1000 samples extracted from total TCGA datasets as sample.pkl for quick implement. If you would like use entire pancancer dataset, please check HIPT repo and download related TCGA RNA expression data from TCGA website.
+2. Please refer to [HIPT](https://github.com/mahmoodlab/HIPT) to extract features from WSIs. Store your features in pickle like `data/sample.pkl`. We use 1000 samples extracted from total TCGA datasets as sample.pkl for quick implement. If you would like use entire pancancer dataset, please check HIPT repo and download related TCGA RNA expression data from TCGA website.
 
-3.Please refer to [MFP](https://github.com/BostonGene/MFP) to obtain the TME labels of your samples.
+3. Please refer to [MFP](https://github.com/BostonGene/MFP) to obtain the TME labels of your samples.
 We also include a TCGA TME label file `data/TCGA_pan_MFP_annotation.tsv`.
 
 ### Run code
