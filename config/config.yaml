@@ -7,7 +7,7 @@ datasets:
   seed: 3076
 
 models:
-  result_dir: 'results_test_trainSNN/'
+  result_dir: 'results/'
   seed: 3076
   model_size_omic: 'big'
   prompt_length: 4

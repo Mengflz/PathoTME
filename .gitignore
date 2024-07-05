@@ -162,3 +162,4 @@ cython_debug/
 # Custom
 *backup.py
 *copy.py
+data/.
